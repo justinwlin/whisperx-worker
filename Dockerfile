@@ -1,4 +1,4 @@
-FROM runpod/base:0.6.2-cuda12.4.1
+FROM justinrunpod/pod-server-base:1.0
 
 SHELL ["/bin/bash", "-c"]
 WORKDIR /
@@ -35,5 +35,10 @@ RUN /builder/download_models.sh
 
 # Copy source code
 COPY src .
+COPY start.sh .
+RUN chmod +x start.sh
 
-CMD [ "python3", "-u", "/rp_handler.py" ]
+# Clean up
+RUN rm -rf /workspace && mkdir -p /workspace
+
+CMD [ "/start.sh" ]
