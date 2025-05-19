@@ -274,8 +274,6 @@ else:
             "id": test_job_id,
             "input": {
                 "audio_file": test_audio_url,
-                "align_output": True
-
             }
         }
         
@@ -284,6 +282,10 @@ else:
         
         # Run the job
         result = run(test_job)
+        
+        # Print the result
+        print("\nTest job result:")
+        print(json.dumps(result, indent=2))
 
     # Run the test
     asyncio.run(test_main())

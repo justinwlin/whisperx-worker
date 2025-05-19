@@ -22,7 +22,6 @@ The API accepts HTTP POST requests with a JSON payload containing the transcript
   "input": {
     "audio_file": "https://github.com/runpod-workers/sample-inputs/raw/main/audio/gettysburg.wav",
     "language": "en",
-    "align_output": true // if you want word level time-stamps
   }
 }
 ```
@@ -63,13 +62,22 @@ The API accepts HTTP POST requests with a JSON payload containing the transcript
   "input": {
     "audio_file": "https://www.youtube.com/watch?v=EsnULp2QYN0",
     "language": "en",
-    "align_output": true
   }
 }
 ```
 
 ### Transcribe a YouTube Playlist
 
+```json
+{
+  "input": {
+    "audio_file": "https://www.youtube.com/watch?v=EsnULp2QYN0&list=PLcMKRQM66creks1bUhOQqHuw0JaIfIztB",
+    "language": "en",
+  }
+}
+```
+
+### Word Level Transcriptions
 ```json
 {
   "input": {
